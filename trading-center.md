@@ -1,4 +1,4 @@
-# Trading Center (Platform Hedging Version)
+# Trading Center 
 
 The Trading Center module is a collection of features for merchants to perform currency exchange between fiat and digital currency accounts, view exchange rate quotes, and manage all exchange orders.
 

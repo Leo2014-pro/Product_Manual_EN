@@ -32,7 +32,7 @@ Welcome to the product manual.
 
 - [Merchant Portal](merchant-portal.md)
 - [Asset Center](asset-center.md)
-- [Trading Center (Platform Hedging Version)](trading-center.md)
+- [Trading Center ](trading-center.md)
 - [Order Center](order-center.md)
 - [OTC Orders](otc-orders.md)
 - [System Admin](system-admin.md)
