@@ -9,7 +9,7 @@
 
 ### Fund Security
 
-- **MPC Wallet** (Multi-Party Computation Wallet)
+-**MPC Wallet**(Multi-Party Computation Wallet)
 - Multi-signature wallet management
 - Fund isolation accounts
 
