@@ -4,7 +4,7 @@ Welcome to the product manual.
 
 ## Table of Contents
 
-### 📘 Product Overview
+###  Product Overview
 
 - [Platform Overview](platform-overview.md)
 - [Problems We Solve](problems-we-solve.md)
@@ -13,7 +13,7 @@ Welcome to the product manual.
 - [Compliance](compliance.md)
 - [Security](security.md)
 
-### ⚡ Business Capabilities
+###  Business Capabilities
 
 - [Global Collection](global-collection.md)
 - [Card Payment](card-payment.md)
@@ -23,12 +23,12 @@ Welcome to the product manual.
 - [Routing Engine](routing-engine.md)
 - [SaaS Management System](saas-management.md)
 
-### 🤝 Partnership
+###  Partnership
 
 - [Partnership Models](partnership-models.md)
 - [Onboarding](onboarding.md)
 
-### 🏪 Merchant Portal
+###  Merchant Portal
 
 - [Merchant Portal](merchant-portal.md)
 - [Asset Center](asset-center.md)
