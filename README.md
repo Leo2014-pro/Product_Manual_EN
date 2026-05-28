@@ -1,38 +1,40 @@
-# Product Manual
+# README
 
 Welcome to the product manual.
 
 ## Table of Contents
 
-### Product Overview                                   Business Capabilities  &#x20;
+### Product Overview         Business Capabilities
 
-* [Platform Overview](platform-overview.md)                                          [Global Collection](global-collection.md)
-* [Problems We Solve](problems-we-solve.md)                                            [Card Payment](card-payment.md)
-* [Core Capabilities](core-capabilities.md)
-* [Supported Currencies](supported-currencies.md)
-* [Compliance](compliance.md)
-* [Security](security.md)
+[Platform Overview](platform-overview.md)                           [Global Collection](global-collection.md)
 
+[Problems We Solve](problems-we-solve.md)                          [Card Payment](card-payment.md)
 
+[Core Capabilities](core-capabilities.md)                              [Virtual Accounts](virtual-accounts.md)
 
-*
-*
-* [Virtual Accounts](virtual-accounts.md)
-* [Crypto Card](crypto-card.md)
-* [Settlement and Exchange](settlement-and-exchange.md)
-* [Routing Engine](routing-engine.md)
-* [SaaS Management System](saas-management.md)
+[Supported Currencies](supported-currencies.md)                      [Crypto Card](crypto-card.md)
 
-### Partnership                                   Merchant Portal  &#x20;
+[Compliance](compliance.md)                                        [Settlement and Exchange](settlement-and-exchange.md)
 
-* [Partnership Models](partnership-models.md)                                          [Merchant Portal](merchant-portal.md)
-* [Onboarding](onboarding.md)                                               [Asset Center](asset-center.md)
+[Security](security.md)                                              [Routing Engine](routing-engine.md)
+
+&#x20;                                                           [SaaS Management System](saas-management.md)
 
 
 
-*
-*
-* [Trading Center](trading-center.md)
-* [Order Center](order-center.md)
-* [OTC Orders](otc-orders.md)
-* [System Admin](system-admin.md)
+### Partnership                      Merchant Portal
+
+[Partnership Models](partnership-models.md)                          [Merchant Portal](merchant-portal.md)
+
+[Onboarding](onboarding.md)                                       [Asset Center](asset-center.md)
+
+&#x20;                                                          [Trading Center](trading-center.md)
+
+&#x20;                                                          [Order Center](order-center.md)
+
+&#x20;                                                          [OTC Orders](otc-orders.md)
+
+&#x20;                                                           [System Admin](system-admin.md)
+
+&#x20;
+
