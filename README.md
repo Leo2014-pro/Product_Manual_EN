@@ -23,15 +23,15 @@ Welcome to the product manual.
 * [Routing Engine](routing-engine.md)
 * [SaaS Management System](saas-management.md)
 
-### Partnership
+### Partnership                                   Merchant Portal  &#x20;
 
-* [Partnership Models](partnership-models.md)
-* [Onboarding](onboarding.md)
+* [Partnership Models](partnership-models.md)                                          [Merchant Portal](merchant-portal.md)
+* [Onboarding](onboarding.md)                                               [Asset Center](asset-center.md)
 
-### Merchant Portal
 
-* [Merchant Portal](merchant-portal.md)
-* [Asset Center](asset-center.md)
+
+*
+*
 * [Trading Center](trading-center.md)
 * [Order Center](order-center.md)
 * [OTC Orders](otc-orders.md)
