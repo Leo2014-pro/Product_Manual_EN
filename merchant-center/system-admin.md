@@ -1,10 +1,8 @@
-# System Admin
+﻿# System Admin
 
 systemmanagement板块是平台management员进行全局configuration、managementuser与permissions、APImanagement、monitoringsystemrun的后台中枢。
 
 Feature Description：view平台所有后台management员accountinformation，并进行accountstatusmanagement。
-
-![Screenshot](../.gitbook/assets/image60.png)
 
 Operations：
 
@@ -26,23 +24,15 @@ confirmpassword：重复输入loginpassword
 
 谷歌verify码：verify当前loginaccount谷歌verify码，用于securityverify
 
-![Screenshot](../.gitbook/assets/image61.png)
-
 edit：edituser名以及status
-
-![Screenshot](../.gitbook/assets/image62.png)
 
 delete：deleteuser后，user无法loginmerchant后台
 
 分配roles：分配roles后，该user拥有该roles对应permissions
 
-![Screenshot](../.gitbook/assets/image63.png)
-
 ·
 
 Feature Description：view平台所有后台rolesinformation，并进行rolespermissionsmanagement。
-
-![Screenshot](../.gitbook/assets/image64.png)
 
 Operations：
 
@@ -50,19 +40,13 @@ add：createroles名，用于该rolespermissions。例如：财务、运营等
 
 超级management员:默认选否即可
 
-![Screenshot](../.gitbook/assets/image65.png)
-
 edit：edit已createrolesinformation
 
 delete：deleteroles后，绑定该roles的user将无任何permissions
 
 绑定菜单：roles绑定菜单，对应绑定rolesuser才能entermanagement及view该菜单
 
-![Screenshot](../.gitbook/assets/image66.png)
-
 该page主要managementloginmerchant的基础securityinformation以及最佳login历史view。
-
-![Screenshot](../.gitbook/assets/image67.png)
 
 资料reviewmanagement
 
@@ -80,8 +64,6 @@ submitreview
 
 review通过后，获得更多permissions
 
-![Screenshot](../.gitbook/assets/image68.png)
-
 loginpasswordmanagement
 
 Feature Description：modifyloginmerchant后台的password。
@@ -98,8 +80,6 @@ settings新loginpassword（输入长度为8-18，数字字母大小写符号组�
 
 click“确定”，passwordmodify即时生效。
 
-![Screenshot](../.gitbook/assets/image69.png)
-
 资金passwordmanagement
 
 Feature Description：settings或modify用于withdrawal等资金Operations时的二次verifypassword。
@@ -115,8 +95,6 @@ settings新资金password（输入长度为8-18，数字字母大小写符号组
 输入邮件verify码/谷歌verify码进行身份verify。
 
 click“确定”，passwordmodify即时生效。
-
-![Screenshot](../.gitbook/assets/image70.png)
 
 谷歌verify器绑定
 
@@ -140,14 +118,7 @@ click“next”，进行securityverify。
 
 confirmsuccess后，重置谷歌success。
 
-![Screenshot](../.gitbook/assets/image71.png)
-
-![Screenshot](../.gitbook/assets/image72.png)
-
-![Screenshot](../.gitbook/assets/image73.png)
-
 最近login历史
 
 Feature Description：显示该merchantaccount最佳loginregion及IPinformation，如发现在未知regionlogin，请及时modifypassword以及谷歌verify器。
 
-![Screenshot](../.gitbook/assets/image74.png)

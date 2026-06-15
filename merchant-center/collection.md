@@ -1,4 +1,4 @@
-# Collection
+﻿# Collection
 
 collection是merchantmanagement所有向usercollection（代收）order、跟踪资金status的核心功能模块。
 
@@ -6,15 +6,11 @@ collection是merchantmanagement所有向usercollection（代收）order、跟踪
 
 Feature Description：本模块display已create的所有collection链接。
 
-![Screenshot](../.gitbook/assets/image19.png)
-
 Operations：
 
 filter：通过标识、productname、time等条件进行filtersearch。
 
 view：view某个支付链接详细information，以及支付链接对应order。
-
-![Screenshot](../.gitbook/assets/image20.png)
 
 delete：delete链接后，该支付链接失效。
 
@@ -44,11 +40,7 @@ currency/amount：根据所选type，选择具体currency及orderamount
 
 链接有效期：当前support4种方式，24h/48h/长期有效，自定义（半年内区间）
 
-![Screenshot](../.gitbook/assets/image21.png)
-
 Feature Description：This page集中display您数字currency代收orderrecords，便于查询、跟踪和management。包含API下单以及支付链接下单data。
-
-![Screenshot](../.gitbook/assets/image22.png)
 
 Operations：
 
