@@ -1,6 +1,8 @@
-﻿# UCard Management
+# UCard Management
 
 平台supportenable虚拟卡、实体卡，同时兼容多子卡共用共享projectassets的共享卡/
+
+U卡account
 
 U 卡资金链路总览
 
@@ -16,23 +18,37 @@ Feature Description：
 
 U 卡account是merchant在 U 卡体系下的资金载体，资金均有数币account进来。U卡体系下开卡、fee、deposit都在该account下扣除。
 
+![](../.gitbook/assets/image47.png)
+
 Operationsdescription：
 
 划转：support数币accountassets与U卡account资金划转。
 
+![](../.gitbook/assets/image48.png)
+
 account明细：viewU卡account资金流水。
+
+![](../.gitbook/assets/image49.png)
+
+共享project
 
 Feature Description：
 
 多张子卡共享同一project资金池的机制，supportprojectcreate、子卡add、projectdeposit/withdrawal。
 
+![](../.gitbook/assets/image50.png)
+
 Operationsdescription：
 
 addproject：共享project → 添加project → 填写name/depositamount/选择卡段等 → confirmcreate。
 
+![](../.gitbook/assets/image51.png)
+
 deposit：共享project → details → deposit → 输入amount → confirm。
 
 转出：共享project → details → withdrawal → 输入amount → confirm。
+
+![](../.gitbook/assets/image52.png)
 
 add子卡：共享project →  添加共享卡 → 选择 U 卡→选择持卡人并configuration消费quota → confirm。
 
@@ -45,6 +61,8 @@ view：
 details-子卡list：view所有子卡information，以及management子卡。
 
 transaction流水：显示共享project的资金流水。
+
+卡片management
 
 卡type对比
 
@@ -92,6 +110,8 @@ Feature Description：
 
 management所有 U 卡（虚拟卡/实体卡）的全生命周期，包括开卡、statusmanagement、查询。list会同时display共享卡（共享卡的开卡及deposit入口在「共享project」模块，本模块仅supportview与statusmanagement）。
 
+![](../.gitbook/assets/image53.png)
+
 Operationsdescription：
 
 add（开卡）：
@@ -101,6 +121,8 @@ add（开卡）：
 虚拟卡：卡片management → 开卡 → 选择卡type（虚拟卡/实体卡） → 选择卡 BIN/卡organization→ 选择持卡人→ depositamount → confirm开卡（system自动扣开卡费）。
 
 ps：共享卡开卡通过共享project下进行开卡。
+
+![](../.gitbook/assets/image54.png)
 
 details：卡片management → list → click某张卡 → view完整information（卡号/持卡人/balance/limit/status/transactionrecords）。
 
@@ -118,31 +140,47 @@ deposit：
 
 共享卡：modify总授信quota，并不adjust资金。
 
+![](../.gitbook/assets/image55.png)
+
 filter：卡片management → list → 按status/卡type/持卡人/卡号/所属projectfilter。
+
+3DSverify
 
 Feature Description：
 
 records U 卡在网络支付时触发的 3DS 二次verifyinformation，supportverifyrecords查询。
 
+![](../.gitbook/assets/image56.png)
+
 Operationsdescription：
 
 filter：3DS verify → verifyrecords → settingstime/卡号/持卡人/verify结果/amount范围 → 查询/export。
+
+transaction查询
 
 Feature Description：
 
 查询 U 卡所有消费records的入口，support多维filter、detailsview、export对账。
 
+![](../.gitbook/assets/image57.png)
+
 Operationsdescription：
 
 filter：transaction查询 → list → settingstime/卡号/持卡人/卡type/所属project/status/type/amount/merchant/关键字 → 查询/export。
+
+持卡人management
 
 Feature Description：
 
 management U 卡持卡人information，是开卡的前置模块，需先create持卡人。
 
+![](../.gitbook/assets/image58.png)
+
 Operationsdescription：
 
 add：持卡人management → add持卡人 → 填写基本information（姓名/证件/手机/address）→ upload证件 → submit。
+
+![](../.gitbook/assets/image59.png)
 
 details：view完整information及关联卡片。
 

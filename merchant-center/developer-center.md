@@ -1,14 +1,22 @@
-﻿# Developer Center
+# Developer Center
 
 说明：developer中心仅介绍 API Key 的apply与回调configuration流程，interface参数、errors码、签名机制等详细 API documentation请查阅独立的 《API 接入documentation》。
 
+APImanagement
+
 Feature Description：management所有已create并apply了APIpermissions的merchant/应用。
+
+![](../.gitbook/assets/image75.png)
 
 Operations：
 
 createAPI Secret：create好API key给到技术进行技术对接。该密钥请妥善management，如有泄露risk，请尽快replace。
 
+![](../.gitbook/assets/image76.png)
+
 Webhooks回调：技术参数configuration，根据业务勾选对应event。
+
+![](../.gitbook/assets/image77.png)
 
 documentationversion v1.1 | 最后update 2026-06-15 | 维护人：product组
 

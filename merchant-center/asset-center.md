@@ -1,8 +1,12 @@
-﻿# Asset Center
+# Asset Center
 
 assets中心主要用于managementmerchant资金。
 
+assetsaccount
+
 Feature Description：This page集中displaymerchant在平台的所有assetsbalance概览，并提供fiat currency、cryptocurrency的deposit与withdrawal入口。VAaccount（development中，尽情期待！）
+
+![](../.gitbook/assets/image1.png)
 
 Operations：
 
@@ -28,15 +32,21 @@ fiat currencydeposit：暂不support。
 
 cryptocurrencydeposit：system将生成一个专属的depositaddress（或QR code），merchant向该addresstransfer即可。
 
+![](../.gitbook/assets/image2.png)
+
 withdrawalOperations：
 
 在对应currency的assets卡片上，click“withdrawal/withdraw”button。
 
 system将引导至“向external进行payment”page，并预选相应currency，merchant需填写withdrawalamount、选择collectionaddress等informationverify资金password及谷歌verify并submitapply。
 
+![](../.gitbook/assets/image3.png)
+
 fiat currencywithdrawal：
 
 指定payment人:可不选，指定payment人时，fee会更高。
+
+![](../.gitbook/assets/image4.png)
 
 批量withdrawalOperations
 
@@ -44,7 +54,13 @@ fiat currencyaccount板块才能进行批量withdrawalOperations
 
 exc填写得information，必须是已review得fiat currencywithdrawaddressinformation
 
+![](../.gitbook/assets/image5.png)
+
 明细：view某个currencyassets的资金流水。
+
+![](../.gitbook/assets/image6.png)
+
+assets转入
 
 Feature Description：This page用于查询和management所有merchantcryptocurrency的depositrecords，便于merchant核对入账情况。fiat currency/VAaccountdeposit暂不support。
 
@@ -54,7 +70,13 @@ filter：order号、address、orderstatus、time等search。
 
 view：viewdeposit详细information。
 
+![](../.gitbook/assets/image7.png)
+
+assets转出
+
 Feature Description：This page用于查询和management所有fiat currency与cryptocurrency的withdrawalrecords。
+
+![](../.gitbook/assets/image8.png)
 
 Operations：
 
@@ -66,7 +88,13 @@ view：viewdeposit详细information。
 
 水单：当有fiat currency转出时，orderstatus已complete，可view以及download水单。
 
+![](../.gitbook/assets/image9.png)
+
+受益人management
+
 Feature Description：本模块用于merchantmanagement其用于withdrawal时接收fiat currency和数字assets的collectionaddress以及fiat currency指定payment人management。merchantsubmitaddress需要平台review通过后，才能使用。
+
+![](../.gitbook/assets/image10.png)
 
 数字assetsaddressOperations：
 
@@ -84,6 +112,8 @@ currency：currencyname
 
 currencyaddress：collection钱包address。
 
+![](../.gitbook/assets/image11.png)
+
 fiat currencyassetsaddressOperations：
 
 filter：通过currencyfiltersearch。
@@ -91,6 +121,8 @@ filter：通过currencyfiltersearch。
 view：view已添加fiat currencycollectionaddressinformation。
 
 add:addfiat currencycollection银行information。
+
+![](../.gitbook/assets/image12.png)
 
 payment人Operations：
 
@@ -100,7 +132,13 @@ view：view已添加fiat currencycollectionaddressinformation。
 
 add：add指定payment人
 
+![](../.gitbook/assets/image13.png)
+
+费率概念
+
 Feature Description：本模块用于merchantview已enable其support的collection/paymentcurrency及其对应的费率和结算rules。如需增加新currency请contact平台。
+
+![](../.gitbook/assets/image14.png)
 
 Operations：
 
@@ -108,9 +146,17 @@ filter：通过currency、支付type、status等进行search。
 
 view：view单一currency的详细information。
 
+承兑
+
 merchantfiat currencyaccount、数币account进行currency兑换、viewexchange rate行情及management所有兑换order的功能集合。
 
+![](../.gitbook/assets/image15.png)
+
+transactioncurrency
+
 Feature Description：This pagedisplay平台support的所有currency兑换transaction对，提供实时exchange rateinformation，并允许merchant进行currency兑换Operations。
+
+![](../.gitbook/assets/image16.png)
 
 Operations：
 
@@ -126,9 +172,14 @@ confirm显示的exchange rate、预计fee和预计到账amount。
 
 输入资金password、谷歌verify后，click“confirm”buttonsubmitorder。
 
+![](../.gitbook/assets/image17.png)
+
+transactionorder
+
 Feature Description：This page集中display您所有的currency兑换orderrecords，便于查询、跟踪和management。
 
 Operations：
 
 filter：order号、type、transactionstatus、timesearch。
 
+![](../.gitbook/assets/image18.png)

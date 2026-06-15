@@ -1,16 +1,22 @@
-﻿# Collection
+# Collection
 
 collection是merchantmanagement所有向usercollection（代收）order、跟踪资金status的核心功能模块。
+
+支付链接
 
 链接list
 
 Feature Description：本模块display已create的所有collection链接。
+
+![](../.gitbook/assets/image19.png)
 
 Operations：
 
 filter：通过标识、productname、time等条件进行filtersearch。
 
 view：view某个支付链接详细information，以及支付链接对应order。
+
+![](../.gitbook/assets/image20.png)
 
 delete：delete链接后，该支付链接失效。
 
@@ -40,7 +46,13 @@ currency/amount：根据所选type，选择具体currency及orderamount
 
 链接有效期：当前support4种方式，24h/48h/长期有效，自定义（半年内区间）
 
+![](../.gitbook/assets/image21.png)
+
+数币collectionorder
+
 Feature Description：This page集中display您数字currency代收orderrecords，便于查询、跟踪和management。包含API下单以及支付链接下单data。
+
+![](../.gitbook/assets/image22.png)
 
 Operations：
 
@@ -55,5 +67,7 @@ orderstatus：ordersuccess后，才会入账到merchant冻结assets中。
 回调notifications：回调success后，表示已notifications下游interface。
 
 切换status：该Operations仅沙河environment存在，用于API对接时，调试使用。
+
+fiat currencycollectionorder
 
 尽情期待！

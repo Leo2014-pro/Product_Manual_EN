@@ -1,8 +1,12 @@
-﻿# Payout
+# Payout
 
 payment是merchantmanagement所有向userpayment（代付）order、跟踪资金status的核心功能模块。
 
+数币paymentorder
+
 Feature Description：This page集中display您数字currency代付orderrecords，便于查询、跟踪和management。
+
+![](../.gitbook/assets/image23.png)
 
 Operations：
 
@@ -26,10 +30,18 @@ currency：需要reviewcurrency
 
 status：开启、close
 
+![](../.gitbook/assets/image24.png)
+
+![](../.gitbook/assets/image25.png)
+
 批量payment：downloadtemplates进行填写批量paymentcollectioninformation
+
+![](../.gitbook/assets/image26.png)
 
 review/批量review：review通过后，代付order进行上链payment。review不通过orderfailed。
 
 切换status：该Operations仅沙河environment存在，用于API对接时，调试使用。
+
+fiat currencypaymentorder
 
 尽情期待！
