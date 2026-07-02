@@ -1,23 +1,17 @@
 # Developer Center
 
-说明：developer中心仅介绍 API Key 的apply与回调configuration流程，interface参数、errors码、签名机制等详细 API documentation请查阅独立的 《API 接入documentation》。
+> **Note**: The Developer Center only covers the API Key application and callback configuration process. For detailed API documentation including interface parameters, error codes, and signature mechanisms, please refer to the separate **API Integration Documentation**.
 
-APImanagement
+## API Management
 
-Feature Description：management所有已create并apply了APIpermissions的merchant/应用。
+**Feature Description**: Manage all merchants/applications that have been created and applied for API permissions.
 
-![](../.gitbook/assets/image75.png)
+**Operations**:
 
-Operations：
+- **Create API Secret**: Create an API key for your technical team to use for integration. Please keep this key secure; if there is any risk of exposure, replace it as soon as possible.
 
-createAPI Secret：create好API key给到技术进行技术对接。该密钥请妥善management，如有泄露risk，请尽快replace。
+- **Webhooks Callbacks**: Configure technical parameters and select corresponding events based on business needs.
 
-![](../.gitbook/assets/image76.png)
+---
 
-Webhooks回调：技术参数configuration，根据业务勾选对应event。
-
-![](../.gitbook/assets/image77.png)
-
-documentationversion v1.1 | 最后update 2026-06-15 | 维护人：product组
-
-|(注：内容由 AI 生成，请谨慎reference）
+Document Version v1.1 | Last Updated 2026-06-15 | Maintained by: Product Team

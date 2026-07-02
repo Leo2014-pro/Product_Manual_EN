@@ -1,191 +1,99 @@
 # UCard Management
 
-平台supportenable虚拟卡、实体卡，同时兼容多子卡共用共享projectassets的共享卡/
+The platform supports issuing virtual and physical cards, and is also compatible with shared cards where multiple sub-cards share a common project asset pool.
 
-U卡account
+## UCard Account
 
-U 卡资金链路总览
+> **UCard Fund Flow Overview**
+> Merchant Crypto Account → Transfer to UCard Account → UCard Account splits into two paths:
+> - Path 1: Direct top-up to a single UCard (card issuance fees, service fees, single card balance deduction)
+> - Path 2: Top-up to a shared project → All sub-cards under the shared project share the same fund pool
+> Funds can only come from the crypto account; the UCard account does not accept external deposits.
 
-merchant数币account → 划转至 U 卡account → U 卡account下分两路：
+**Feature Description**: The UCard Account is the funding vehicle for merchants within the UCard system; all funds come from the crypto account. Card issuance, service fees, and top-ups under the UCard system are all deducted from this account.
 
-路 1：直接deposit到单张 U 卡（开卡费、fee、单卡balance扣减）
+**Operations**:
 
-路 2：deposit到共享project → 共享project下所有子卡共用同一资金池
+- **Transfer**: Supports fund transfers between crypto account assets and the UCard account.
+- **Account Details**: View UCard account fund transaction history.
 
-资金只能从数币account进来，U 卡account不接收external入金。
+---
 
-Feature Description：
+## Shared Projects
 
-U 卡account是merchant在 U 卡体系下的资金载体，资金均有数币account进来。U卡体系下开卡、fee、deposit都在该account下扣除。
+**Feature Description**: A mechanism where multiple sub-cards share the same project fund pool, supporting project creation, sub-card addition, and project top-ups/withdrawals.
 
-![](../.gitbook/assets/image47.png)
+**Operations:**
 
-Operationsdescription：
+- **Create Project**: Shared Project → Add Project → Fill in name/top-up amount/select card BIN, etc. → Confirm creation.
+- **Top-Up**: Shared Project → Details → Top-Up → Enter amount → Confirm.
+- **Transfer Out**: Shared Project → Details → Withdraw → Enter amount → Confirm.
+- **Add Sub-Card**: Shared Project → Add Shared Card → Select UCard → Select cardholder and configure spending limit → Confirm.
+- **Freeze/Unfreeze Sub-Card**: Shared Project → Details → Select sub-card → Freeze/Unfreeze. Frozen sub-cards are unavailable.
+- **Freeze Project**: Shared Project → Details → More → Freeze. All sub-cards become unavailable once frozen.
+- **View**:
+  - Details - Sub-Card List: View all sub-card information and manage sub-cards.
+  - Transaction History: Displays the fund transaction history of the shared project.
 
-划转：support数币accountassets与U卡account资金划转。
+---
 
-![](../.gitbook/assets/image48.png)
+## Card Management
 
-account明细：viewU卡account资金流水。
+> **Card Type Comparison**
+>
+> | Dimension | Virtual Card | Physical Card | Shared Card |
+> |-----------|-------------|---------------|-------------|
+> | Issuance Entry | Card Management | Card Management | Shared Project (not issued via Card Management) |
+> | Funding Source | UCard Account | UCard Account | Shared Project Fund Pool |
+> | Use Case | Online payments, instant issuance | Offline swiping, physical delivery | Team/Project shared funds |
+> | Status Management | Freeze/Unfreeze/Cancel | Freeze/Unfreeze/Cancel | Managed under Shared Project |
 
-![](../.gitbook/assets/image49.png)
+**Feature Description**: Manage the full lifecycle of all UCards (virtual/physical), including card issuance, status management, and queries. The list also displays shared cards (shared card issuance and top-up entry points are in the "Shared Projects" module; this module only supports viewing and status management).
 
-共享project
+**Operations:**
 
-Feature Description：
+- **Add (Issue Card)**:
+  - Physical Card: Card Management → Issue Card → Select card type (Virtual/Physical) → Select card BIN/card scheme → Select cardholder → Enter card number → Set PIN → Confirm issuance (card issuance fee automatically deducted).
+  - Virtual Card: Card Management → Issue Card → Select card type (Virtual/Physical) → Select card BIN/card scheme → Select cardholder → Top-up amount → Confirm issuance (card issuance fee automatically deducted).
+  - Note: Shared cards are issued through the Shared Project module.
 
-多张子卡共享同一project资金池的机制，supportprojectcreate、子卡add、projectdeposit/withdrawal。
+- **Details**: Card Management → List → Click a card → View complete information (card number/cardholder/balance/limits/status/transaction records).
+- **Status Change**: Card Management → List → Action column → Freeze/Unfreeze/Copy/Cancel.
+- **Top-Up**:
+  - Regular Card: Top-up deducts funds from the UCard account.
+  - Shared Card: Modify total credit limit without adjusting funds.
+- **Transfer Out**:
+  - Regular Card: Transfer out to UCard account.
+  - Shared Card: Modify total credit limit without adjusting funds.
+- **Filter**: Card Management → List → Filter by status/card type/cardholder/card number/project.
 
-![](../.gitbook/assets/image50.png)
+---
 
-Operationsdescription：
+## 3DS Verification
 
-addproject：共享project → 添加project → 填写name/depositamount/选择卡段等 → confirmcreate。
+**Feature Description**: Records 3DS secondary verification information triggered during UCard online payments, supporting verification record queries.
 
-![](../.gitbook/assets/image51.png)
+**Operations**: Filter: 3DS Verification → Verification Records → Set time/card number/cardholder/verification result/amount range → Query/Export.
 
-deposit：共享project → details → deposit → 输入amount → confirm。
+---
 
-转出：共享project → details → withdrawal → 输入amount → confirm。
+## Transaction Inquiry
 
-![](../.gitbook/assets/image52.png)
+**Feature Description**: The entry point for querying all UCard spending records, supporting multi-dimensional filtering, detail viewing, and export for reconciliation.
 
-add子卡：共享project →  添加共享卡 → 选择 U 卡→选择持卡人并configuration消费quota → confirm。
+**Operations**:
+- Filter: Transaction Inquiry → List → Set time/card number/cardholder/card type/project/status/type/amount/merchant/keyword → Query/Export.
 
-冻结/activate子卡：共享project → details → 选择子卡 → 冻结/activate。冻结后子卡不可用。
+---
 
-冻结：共享project → details → 更多 → 冻结。 冻结后所有子卡均不可用。
+## Cardholder Management
 
-view：
+**Feature Description**: Manage UCard cardholder information. This is a prerequisite module for card issuance — cardholders must be created first.
 
-details-子卡list：view所有子卡information，以及management子卡。
+**Operations**:
 
-transaction流水：显示共享project的资金流水。
-
-卡片management
-
-卡type对比
-
-维度
-
-虚拟卡
-
-实体卡
-
-共享卡
-
-开卡入口
-
-卡片management
-
-卡片management
-
-共享project（不在卡片management开）
-
-资金来源
-
-U 卡account
-
-U 卡account
-
-共享project资金池
-
-适用场景
-
-线上支付、即开即用
-
-线下刷卡、实体邮寄
-
-team/project共用资金
-
-statusmanagement
-
-冻结/解冻/注销
-
-冻结/解冻/注销
-
-在共享project下management
-
-Feature Description：
-
-management所有 U 卡（虚拟卡/实体卡）的全生命周期，包括开卡、statusmanagement、查询。list会同时display共享卡（共享卡的开卡及deposit入口在「共享project」模块，本模块仅supportview与statusmanagement）。
-
-![](../.gitbook/assets/image53.png)
-
-Operationsdescription：
-
-add（开卡）：
-
-实体卡：卡片management → 开卡 → 选择卡type（虚拟卡/实体卡）→  选择卡 BIN/卡organization → 选择持卡人 →输入卡号→ settingspin → confirm开卡（system自动扣开卡费）。
-
-虚拟卡：卡片management → 开卡 → 选择卡type（虚拟卡/实体卡） → 选择卡 BIN/卡organization→ 选择持卡人→ depositamount → confirm开卡（system自动扣开卡费）。
-
-ps：共享卡开卡通过共享project下进行开卡。
-
-![](../.gitbook/assets/image54.png)
-
-details：卡片management → list → click某张卡 → view完整information（卡号/持卡人/balance/limit/status/transactionrecords）。
-
-statuschange：卡片management → list → Operations列 →冻结/解冻/copy/注销。
-
-deposit：
-
-常规卡：deposit则扣除U卡account资金
-
-共享卡：modify总授信quota，并不adjust资金。
-
-转出：
-
-常规卡：转出到U卡account中。
-
-共享卡：modify总授信quota，并不adjust资金。
-
-![](../.gitbook/assets/image55.png)
-
-filter：卡片management → list → 按status/卡type/持卡人/卡号/所属projectfilter。
-
-3DSverify
-
-Feature Description：
-
-records U 卡在网络支付时触发的 3DS 二次verifyinformation，supportverifyrecords查询。
-
-![](../.gitbook/assets/image56.png)
-
-Operationsdescription：
-
-filter：3DS verify → verifyrecords → settingstime/卡号/持卡人/verify结果/amount范围 → 查询/export。
-
-transaction查询
-
-Feature Description：
-
-查询 U 卡所有消费records的入口，support多维filter、detailsview、export对账。
-
-![](../.gitbook/assets/image57.png)
-
-Operationsdescription：
-
-filter：transaction查询 → list → settingstime/卡号/持卡人/卡type/所属project/status/type/amount/merchant/关键字 → 查询/export。
-
-持卡人management
-
-Feature Description：
-
-management U 卡持卡人information，是开卡的前置模块，需先create持卡人。
-
-![](../.gitbook/assets/image58.png)
-
-Operationsdescription：
-
-add：持卡人management → add持卡人 → 填写基本information（姓名/证件/手机/address）→ upload证件 → submit。
-
-![](../.gitbook/assets/image59.png)
-
-details：view完整information及关联卡片。
-
-冻结/activate： deactivate/activate。
-
-delete（注销）：持卡人management → list → Operations列 → 注销（需先handle名下所有卡片）。
-
-filter：持卡人management → list → 按 KYC status/国籍/持卡人status/姓名/手机号/证件号filter。
+- **Add**: Cardholder Management → Add Cardholder → Fill in basic information (name/ID/phone/address) → Upload ID → Submit.
+- **Details**: View complete information and associated cards.
+- **Freeze/Enable**: Deactivate/Activate.
+- **Delete (Deregister)**: Cardholder Management → List → Action column → Deregister (all cards under the cardholder must be handled first).
+- **Filter**: Cardholder Management → List → Filter by KYC status/nationality/cardholder status/name/phone number/ID number.

@@ -1,35 +1,41 @@
 # Summary
-- [README](README.md)
 
--**Product Overview**
-  - [Platform Overview](platform-overview.md)
-  - [Problems We Solve](problems-we-solve.md)
-  - [Core Capabilities](core-capabilities.md)
-  - [Supported Currencies](supported-currencies.md)
-  - [Compliance](compliance.md)
-  - [Security](security.md)
+* [Home](README.md)
 
--**Business Capabilities**
-  - [Global Collection](global-collection.md)
-  - [Card Payment](card-payment.md)
-  - [Virtual Accounts](virtual-accounts.md)
-  - [Crypto Card](crypto-card.md)
-  - [Settlement and Exchange](settlement-and-exchange.md)
-  - [Routing Engine](routing-engine.md)
-  - [SaaS Management System](saas-management.md)
+## Product Overview
 
--**Partnership**
-  - [Partnership Models](partnership-models.md)
-  - [Onboarding](onboarding.md)
+* [Platform Definition](product-overview/platform-definition.md)
+* [Problems We Solve](product-overview/problems-we-solve.md)
+* [Core Capabilities](product-overview/core-capabilities.md)
+* [Supported Fund Types](product-overview/supported-fund-types.md)
+* [Compliance & Certifications](product-overview/compliance.md)
+* [Security](product-overview/security.md)
 
--**Merchant Portal**
-  - [Asset Center](merchant-center/asset-center.md)
-  - [Collection](merchant-center/collection.md)
-  - [Payout](merchant-center/payout.md)
-  - [OTC Orders](merchant-center/otc-orders.md)
-  - [UCard Management](merchant-center/ucard-management.md)
-  - [VA Account](merchant-center/va-account.md)
-  - [Card Acquiring](merchant-center/card-acquiring.md)
-  - [Reports](merchant-center/reports.md)
-  - [System Admin](merchant-center/system-admin.md)
-  - [Developer Center](merchant-center/developer-center.md)
+## Business Capabilities
+
+* [Global Collection](business-capabilities/global-collection.md)
+* [Card Payment](business-capabilities/card-payment.md)
+* [Virtual Account System](business-capabilities/virtual-account-system.md)
+* [Crypto Card](business-capabilities/crypto-card.md)
+* [Settlement & Exchange](business-capabilities/settlement-and-exchange.md)
+* [Channel & Routing System](business-capabilities/routing-engine.md)
+* [SaaS Management System](business-capabilities/saas-management.md)
+
+## Partnership
+
+* [Partnership Models](partnership/partnership-models.md)
+* [Onboarding](partnership/onboarding.md)
+
+## Merchant Center
+
+* [Merchant Center](merchant-center/README.md)
+* [Asset Center](merchant-center/asset-center.md)
+* [Collection](merchant-center/collection.md)
+* [Payout](merchant-center/payout.md)
+* [OTC Orders](merchant-center/otc-orders.md)
+* [UCard Management](merchant-center/ucard-management.md)
+* [VA Account](merchant-center/va-account.md)
+* [Card Acquiring](merchant-center/card-acquiring.md)
+* [Reports](merchant-center/reports.md)
+* [System Admin](merchant-center/system-admin.md)
+* [Developer Center](merchant-center/developer-center.md)

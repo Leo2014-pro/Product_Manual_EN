@@ -1,73 +1,55 @@
 # Collection
 
-collection是merchantmanagement所有向usercollection（代收）order、跟踪资金status的核心功能模块。
+Collection is the core functional module for merchants to manage all **inbound collection** (receiving funds from users) orders and track fund status.
 
-支付链接
+## Payment Links
 
-链接list
+### Link List
 
-Feature Description：本模块display已create的所有collection链接。
+- **Feature Description**: This module displays all created collection links.
 
-![](../.gitbook/assets/image19.png)
+- **Operations**:
+  - Filter: Search by identifier, product name, time, and other criteria.
+  - View: View detailed information of a payment link, as well as orders associated with that payment link.
+  - Delete: After deleting a link, that payment link becomes invalid.
+  - Copy: Click the "Copy Link" button to share the URL with buyers for payment.
+  - Add: Generate a fixed collection link for buyers, with flexible parameter configuration:
+    1. **Link Basic Information**:
+       - Product Name, Product Description: Displayed on the payment checkout page.
+       - Image: If not set, the merchant logo is displayed.
+       - Advanced Settings: If configured, users will need to fill in the corresponding information on the payment checkout page.
+       - Pricing Currency: The currency used for calculating the price of this payment link.
+       - Pricing Amount: The amount the user needs to pay; if left blank, the user fills it in on the checkout page.
+    2. **Link Configuration**:
+       - Type: Choose between crypto or fiat (single selection); determines the payment methods available to the user at the time of payment.
+       - Currency/Amount: Based on the selected type, choose the specific currency and order amount.
+       - Link Type: Single-use / Multi-use; determines whether this link can initiate a transaction once or repeatedly.
+       - Link Validity Period: Currently supports 4 options: 24h / 48h / Long-term / Custom (within a six-month window).
 
-Operations：
+---
 
-filter：通过标识、productname、time等条件进行filtersearch。
+## Crypto Collection Orders
 
-view：view某个支付链接详细information，以及支付链接对应order。
+**Feature Description**: This page centrally displays your digital currency collection order records for easy querying, tracking, and management. Includes data from both API-placed orders and payment link orders.
 
-![](../.gitbook/assets/image20.png)
+**Operations**:
+- Filter: Search by order number, type, transaction status, and time.
+- View: Detailed fields of the order's top-up.
+  - Order Status: Only after the order is successful will it be credited to the merchant's frozen assets.
+  - Settlement Status: Only when settlement becomes successful will it be credited to the merchant's available assets.
+  - Callback Notification: After a successful callback, it indicates that the downstream interface has been notified.
+- Switch Status: This operation only exists in the sandbox environment and is used for debugging during API integration.
 
-delete：delete链接后，该支付链接失效。
+---
 
-copy：click“copy链接”button，即可将该URLshare给买家进行payment。
+## Fiat Collection Orders
 
-add：生成一个面向买家的固定collection链接，并support灵活configuration参数，包含以下
+**Feature Description**: This page centrally displays your fiat currency collection order records for easy querying, tracking, and management. Includes data from both API-placed orders and payment link orders.
 
-链接基本information：
-
-productname、productdescription：将于支付收银pagedisplay所settingsinformation
-
-图片：若不settings，则displaymerchantlogo
-
-高级settings：如configuration后，user在支付收银page需要填写对应information
-
-计价currency：该支付链接用于计算pricecurrency
-
-计价amount：user需要支付的amount字段，如不填写则由user在收银page自己填写
-
-链接configuration：
-
-type：可选数币或fiat currency（单选），user实际支付时可使用支付方式
-
-currency/amount：根据所选type，选择具体currency及orderamount
-
-链接type：单次有效/多次有效，这将决定本链接可发起一次或可重复发起transaction
-
-链接有效期：当前support4种方式，24h/48h/长期有效，自定义（半年内区间）
-
-![](../.gitbook/assets/image21.png)
-
-数币collectionorder
-
-Feature Description：This page集中display您数字currency代收orderrecords，便于查询、跟踪和management。包含API下单以及支付链接下单data。
-
-![](../.gitbook/assets/image22.png)
-
-Operations：
-
-filter：order号、type、transactionstatus、timesearch。
-
-view：orderdeposit详细字段。
-
-orderstatus：ordersuccess后，才会入账到merchant冻结assets中。
-
-结算status：结算变为success时，才会入账到merchant可用assets中。
-
-回调notifications：回调success后，表示已notifications下游interface。
-
-切换status：该Operations仅沙河environment存在，用于API对接时，调试使用。
-
-fiat currencycollectionorder
-
-尽情期待！
+**Operations**:
+- Filter: Search by order number, type, transaction status, and time.
+- View: Detailed fields of the order's top-up.
+  - Order Status: Only after the order is successful will it be credited to the merchant's frozen assets.
+  - Settlement Status: Only when settlement becomes successful will it be credited to the merchant's available assets.
+  - Callback Notification: After a successful callback, it indicates that the downstream interface has been notified.
+- Switch Status: This operation only exists in the sandbox environment and is used for debugging during API integration.

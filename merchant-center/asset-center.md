@@ -1,185 +1,116 @@
 # Asset Center
 
-assets中心主要用于managementmerchant资金。
+The Asset Center is primarily used for managing merchant funds.
 
-assetsaccount
+## Asset Accounts
 
-Feature Description：This page集中displaymerchant在平台的所有assetsbalance概览，并提供fiat currency、cryptocurrency的deposit与withdrawal入口。VAaccount（development中，尽情期待！）
+**Feature Description**: This page provides a centralized overview of all asset balances held by the merchant on the platform, and offers entry points for fiat and digital currency deposits and withdrawals, as well as VA assets and UCard accounts.
 
-![](../.gitbook/assets/image1.png)
+**Operations**:
 
-Operations：
+1. **View Asset Overview**:
+   - Upon entering the page, the system displays the following asset balances categorized in a list format:
+     - **Fiat Assets**: Displays "Available Balance", "Frozen Amount", and "Rolling Reserve" by currency (e.g., CNY, USD).
+     - **Digital Assets**: Displays "Available Balance" and "Frozen Amount" by currency (e.g., USDT, BTC).
+     - **VA Account Assets**: Used for managing the merchant's global VA collection/payout funds and account balances.
+     - **UCard Account Assets**: USDT only, used for card issuance, card top-ups, and related capabilities.
 
-viewassets概览：
+2. **Deposit Operations**:
+   - On the asset card of the corresponding currency, click the "Deposit" button.
+   - The system will guide you to different deposit flows based on the currency type:
+     - **Fiat Deposit**: Redirects to the cashier for top-up; deposit orders can be viewed under Collection Orders.
+     - **VA Deposit**: You may select the merchant's own VA account for receiving funds; deposit orders can be viewed under Transfer-In Records.
+     - **Digital Currency Deposit**: The system generates a dedicated **deposit address** (or QR code); the merchant transfers funds to this address.
 
-enterpage后，system以list形式分类display以下assetsbalance：
+3. **Withdrawal Operations**:
+   - On the asset card of the corresponding currency, click the "Withdraw" button.
+   - The system guides you to the "External Payment" page, pre-selecting the corresponding currency. The merchant must fill in the withdrawal amount, select the receiving address, verify the fund password and Google Authenticator, and submit the request.
+   - **VA Withdrawal**: Must select a designated VA account for the outflow.
+   - **Fiat Withdrawal**: Specifying a payer is optional; specifying one incurs higher fees.
 
-fiat currencyassets：按不同currency（如CNY、USD等）分别显示“可用balance”、“frozen amount”、“rolling reserve”。
+4. **Batch Withdrawal Operations**:
+   - Batch withdrawal is only available for fiat accounts.
+   - Information filled in the Excel template must use already-approved fiat withdrawal address details.
 
-数字assets：按不同currency（如USDT、BTC等）分别显示“可用balance”、“frozen amount”、
+5. **Details**: View the fund transaction history for a specific currency asset.
 
-VAaccount：敬请期待
+---
 
-U卡account：只有USDT，用于开卡、卡deposit等能力。
+## Asset Transfer-In
 
-depositOperations：
+**Feature Description**: This page is used to query and manage all digital currency deposit records for the merchant, facilitating reconciliation of incoming funds. Fiat/VA account deposits are not currently supported.
 
-在对应currency的assets卡片上，click“deposit”button。
+**Operations**:
+- Filter: Search by order number, address, order status, time, etc.
+- View: View detailed deposit information.
 
-system将根据currencytype引导至不同deposit流程：
+---
 
-fiat currencydeposit：暂不support。
+## Asset Transfer-Out
 
-cryptocurrencydeposit：system将生成一个专属的depositaddress（或QR code），merchant向该addresstransfer即可。
+**Feature Description**: This page is used to query and manage all fiat and digital currency withdrawal records.
 
-![](../.gitbook/assets/image2.png)
+**Operations**:
+- View: View merchant withdrawal records for fiat and digital currencies. VA accounts coming soon!
+- Filter: Search by order number, address, order status, time, etc.
+- Bank Slip: When a fiat transfer-out occurs and the order status is completed, you can view and download the bank slip.
 
-withdrawalOperations：
+---
 
-在对应currency的assets卡片上，click“withdrawal/withdraw”button。
+## Beneficiary Management
 
-system将引导至“向external进行payment”page，并预选相应currency，merchant需填写withdrawalamount、选择collectionaddress等informationverify资金password及谷歌verify并submitapply。
+**Feature Description**: This module is used by merchants to manage receiving addresses for fiat and digital asset withdrawals, as well as designated fiat payer management. Addresses submitted by merchants must be approved by the platform before they can be used.
 
-![](../.gitbook/assets/image3.png)
+**Digital Asset Address Operations:**
+- Filter: Search by currency.
+- Edit: Modify receiving address information.
+- Add:
+  - Beneficiary Name: Name of the receiving address
+  - Currency: Currency name
+  - Chain Type: The public chain to which the currency belongs
+  - Currency Address: Receiving wallet address.
 
-fiat currencywithdrawal：
+**Fiat Asset Address Operations:**
+- Filter: Search by currency.
+- View: View information of added fiat receiving addresses.
+- Add: Add new fiat receiving bank information.
 
-指定payment人:可不选，指定payment人时，fee会更高。
+**VA Beneficiary Operations:**
+- Filter: Search by currency, account, beneficiary status, etc.
+- You must first add a beneficiary, then add a receiving bank account based on the beneficiary.
 
-![](../.gitbook/assets/image4.png)
+**Payer Operations:**
+- Filter: Search by currency, name, country, etc.
+- View: View information of added fiat receiving addresses.
+- Add: Add a new designated payer.
 
-批量withdrawalOperations
+---
 
-fiat currencyaccount板块才能进行批量withdrawalOperations
+## Fee Rates
 
-exc填写得information，必须是已review得fiat currencywithdrawaddressinformation
+**Feature Description**: This module allows merchants to view the supported collection/payout currencies and their corresponding fee rates and settlement rules. Please contact the platform to add new currencies.
 
-![](../.gitbook/assets/image5.png)
+**Operations**:
+- Filter: Search by currency, payment type, status, etc.
+- View: View detailed information for a single currency.
 
-明细：view某个currencyassets的资金流水。
+---
 
-![](../.gitbook/assets/image6.png)
+## OTC (Over-The-Counter)
 
-assets转入
+A collection of features for currency exchange between merchant fiat and digital currency accounts, viewing exchange rate quotes, and managing all exchange orders.
 
-Feature Description：This page用于查询和management所有merchantcryptocurrency的depositrecords，便于merchant核对入账情况。fiat currency/VAaccountdeposit暂不support。
+### Trading Pairs
 
-Operations：
+**Feature Description**: This page displays all currency exchange trading pairs supported by the platform, provides real-time exchange rate information, and allows merchants to perform currency exchange operations.
 
-filter：order号、address、orderstatus、time等search。
+**Operations**:
+- Filter: Search by type and currency.
+- Exchange: Select transaction type: **Buy** [target currency] or **Sell** [base currency]. Enter the amount of currency you wish to spend in the "**Amount**" field; the system will automatically calculate the amount you will receive in the "**You Get**" field based on the real-time exchange rate. Confirm the displayed **exchange rate**, **estimated fee**, and **estimated arrival amount**. Enter your **fund password and Google Authenticator code**, then click the "**Confirm**" button to submit the order.
 
-view：viewdeposit详细information。
+### Trading Orders
 
-![](../.gitbook/assets/image7.png)
+**Feature Description**: This page centrally displays all your currency exchange order records for easy querying, tracking, and management.
 
-assets转出
-
-Feature Description：This page用于查询和management所有fiat currency与cryptocurrency的withdrawalrecords。
-
-![](../.gitbook/assets/image8.png)
-
-Operations：
-
-view：viewfiat currency、数币的merchantwithdrawalrecords。VAaccount尽情期待！
-
-filter：order号、address、orderstatus、time等search。
-
-view：viewdeposit详细information。
-
-水单：当有fiat currency转出时，orderstatus已complete，可view以及download水单。
-
-![](../.gitbook/assets/image9.png)
-
-受益人management
-
-Feature Description：本模块用于merchantmanagement其用于withdrawal时接收fiat currency和数字assets的collectionaddress以及fiat currency指定payment人management。merchantsubmitaddress需要平台review通过后，才能使用。
-
-![](../.gitbook/assets/image10.png)
-
-数字assetsaddressOperations：
-
-filter：通过currencyfiltersearch。
-
-edit：modifycollectionaddressinformation。
-
-add:
-
-受益人name：collectionaddressname
-
-currency：currencyname
-
-链type：该currency归属公链
-
-currencyaddress：collection钱包address。
-
-![](../.gitbook/assets/image11.png)
-
-fiat currencyassetsaddressOperations：
-
-filter：通过currencyfiltersearch。
-
-view：view已添加fiat currencycollectionaddressinformation。
-
-add:addfiat currencycollection银行information。
-
-![](../.gitbook/assets/image12.png)
-
-payment人Operations：
-
-filter：通过currency、姓名、country等filtersearch。
-
-view：view已添加fiat currencycollectionaddressinformation。
-
-add：add指定payment人
-
-![](../.gitbook/assets/image13.png)
-
-费率概念
-
-Feature Description：本模块用于merchantview已enable其support的collection/paymentcurrency及其对应的费率和结算rules。如需增加新currency请contact平台。
-
-![](../.gitbook/assets/image14.png)
-
-Operations：
-
-filter：通过currency、支付type、status等进行search。
-
-view：view单一currency的详细information。
-
-承兑
-
-merchantfiat currencyaccount、数币account进行currency兑换、viewexchange rate行情及management所有兑换order的功能集合。
-
-![](../.gitbook/assets/image15.png)
-
-transactioncurrency
-
-Feature Description：This pagedisplay平台support的所有currency兑换transaction对，提供实时exchange rateinformation，并允许merchant进行currency兑换Operations。
-
-![](../.gitbook/assets/image16.png)
-
-Operations：
-
-filter：type、currencysearch。
-
-兑换：
-
-选择transactiontype：买入[goalcurrency] 或 卖出[基准currency]。
-
-在“amount”框中输入您要付出的currencyquantity，system会根据实时exchange rate在“获得”框中自动计算您将收到的currencyquantity。
-
-confirm显示的exchange rate、预计fee和预计到账amount。
-
-输入资金password、谷歌verify后，click“confirm”buttonsubmitorder。
-
-![](../.gitbook/assets/image17.png)
-
-transactionorder
-
-Feature Description：This page集中display您所有的currency兑换orderrecords，便于查询、跟踪和management。
-
-Operations：
-
-filter：order号、type、transactionstatus、timesearch。
-
-![](../.gitbook/assets/image18.png)
+**Operations**:
+- Filter: Search by order number, type, transaction status, and time.

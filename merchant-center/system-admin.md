@@ -1,159 +1,89 @@
 # System Admin
 
-systemmanagement板块是平台management员进行全局configuration、managementuser与permissions、APImanagement、monitoringsystemrun的后台中枢。
+The System Administration section is the backend hub for platform administrators to perform global configuration, manage users and permissions, manage APIs, and monitor system operations.
 
-usermanagement
+## User Management
 
-Feature Description：view平台所有后台management员accountinformation，并进行accountstatusmanagement。
+**Feature Description**: View all platform backend administrator account information and manage account status.
 
-![](../.gitbook/assets/image60.png)
+**Operations**:
+- Filter: Search by account name, status, and time.
+- Add:
+  - Account Name: It is recommended that the login username match the email address.
+  - Username: Used only to display the user's name.
+  - Email: Used for security verification during sensitive operations; a verification code will be sent.
+  - Status: When disabled, the user will not be able to log in to the merchant backend.
+  - Password: Set the login password.
+  - Confirm Password: Re-enter the login password.
+  - Google Authenticator Code: Verify the Google Authenticator code of the currently logged-in account for security verification.
 
-Operations：
+- Edit: Edit username and status.
+- Delete: After deletion, the user cannot log in to the merchant backend.
+- Assign Role: After assigning a role, the user will have the permissions corresponding to that role.
 
-filter：account名、status、time进行search
+---
 
-add：
+## Role Management
 
-account名：login需要使用user名建议和邮箱一致
+**Feature Description**: View all backend role information for the platform and manage role permissions.
 
-user名：仅用于显示该username
+**Operations**:
+- Add: Create a role name for the role's permissions. Examples: Finance, Operations, etc.
+  - Super Administrator: Default to "No".
 
-邮箱：用于敏感Operations时，securityverify，会需要收verify码
+- Edit: Edit information of created roles.
+- Delete: After deleting a role, users bound to that role will have no permissions.
+- Bind Menu: Bind menus to a role; users bound to that role will then be able to access and view those menus.
 
-status：禁用后，将无法loginmerchant后台
+---
 
-password：loginpasswordsettings
+## Security Center
 
-confirmpassword：重复输入loginpassword
+This page is primarily for managing basic security information for merchant logins and viewing the latest login history.
 
-谷歌verify码：verify当前loginaccount谷歌verify码，用于securityverify
+### Profile Verification Management
 
-![](../.gitbook/assets/image61.png)
+- **Feature Description**: Submit company information for platform review. When no information has been submitted, permissions are limited.
+- **Steps**:
+  1. Click "Verify"
+  2. Fill in business information
+  3. Fill in contact person information
+  4. Submit for review
+  5. After approval, gain more permissions
 
-edit：edituser名以及status
+### Login Password Management
 
-![](../.gitbook/assets/image62.png)
+- **Feature Description**: Change the password for logging into the merchant backend.
+- **Steps**:
+  1. Click "Change Login Password".
+  2. Set a **new login password** (8-18 characters, combination of letters, numbers, and symbols).
+  3. Re-enter the new password for confirmation.
+  4. Enter email verification code / Google Authenticator code for identity verification.
+  5. Click "Confirm"; the password change takes effect immediately.
 
-delete：deleteuser后，user无法loginmerchant后台
+### Fund Password Management
 
-分配roles：分配roles后，该user拥有该roles对应permissions
+- **Feature Description**: Set or change the secondary verification password used for fund operations such as withdrawals.
+- **Steps**:
+  1. Click "Change Fund Password".
+  2. Set a **new fund password** (8-18 characters, combination of letters, numbers, and symbols).
+  3. Re-enter the new password for confirmation.
+  4. Enter email verification code / Google Authenticator code for identity verification.
+  5. Click "Confirm"; the password change takes effect immediately.
 
-![](../.gitbook/assets/image63.png)
+### Google Authenticator Binding
 
-·
+- **Feature Description**: Bind Google Authenticator to add dynamic password (MFA) protection for logins or critical operations. Binding is mandatory upon first login.
+- If you have forgotten your original Google Authenticator code, please contact the platform for a reset.
+- **Steps**:
+  1. Click "Reset Google Authenticator".
+  2. Use the Google Authenticator app to scan the **QR code** displayed on the page.
+  3. The app will generate a 6-digit dynamic verification code.
+  4. Enter this verification code in the input field on the page.
+  5. Click "Next" to proceed with security verification.
+  6. Enter email verification code / original Google Authenticator code for identity verification.
+  7. Upon successful confirmation, the Google Authenticator reset is complete.
 
-rolesmanagement
+### Recent Login History
 
-Feature Description：view平台所有后台rolesinformation，并进行rolespermissionsmanagement。
-
-![](../.gitbook/assets/image64.png)
-
-Operations：
-
-add：createroles名，用于该rolespermissions。例如：财务、运营等
-
-超级management员:默认选否即可
-
-![](../.gitbook/assets/image65.png)
-
-edit：edit已createrolesinformation
-
-delete：deleteroles后，绑定该roles的user将无任何permissions
-
-绑定菜单：roles绑定菜单，对应绑定rolesuser才能entermanagement及view该菜单
-
-![](../.gitbook/assets/image66.png)
-
-security中心
-
-该page主要managementloginmerchant的基础securityinformation以及最佳login历史view。
-
-![](../.gitbook/assets/image67.png)
-
-资料reviewmanagement
-
-Feature Description：submit资料平台review，当未submit资料时，permissions较少。
-
-Operations步骤：
-
-click“verification”
-
-填写企业information
-
-填写contact人information
-
-submitreview
-
-review通过后，获得更多permissions
-
-![](../.gitbook/assets/image68.png)
-
-loginpasswordmanagement
-
-Feature Description：modifyloginmerchant后台的password。
-
-Operations步骤：
-
-click“modifyloginpassword”。
-
-settings新loginpassword（输入长度为8-18，数字字母大小写符号组合的password）。
-
-再次输入新passwordconfirm。
-
-输入邮件verify码/谷歌verify码进行身份verify。
-
-click“确定”，passwordmodify即时生效。
-
-![](../.gitbook/assets/image69.png)
-
-资金passwordmanagement
-
-Feature Description：settings或modify用于withdrawal等资金Operations时的二次verifypassword。
-
-Operations步骤：
-
-click“modify资金password”。
-
-settings新资金password（输入长度为8-18，数字字母大小写符号组合的password）。
-
-再次输入新passwordconfirm。
-
-输入邮件verify码/谷歌verify码进行身份verify。
-
-click“确定”，passwordmodify即时生效。
-
-![](../.gitbook/assets/image70.png)
-
-谷歌verify器绑定
-
-Feature Description：绑定谷歌verify器（Google Authenticator），为login或关键Operations增加动态口令（MFA）protection。默认首次login必须绑定。
-
-如忘记原谷歌verify码，请contact平台进行重置。
-
-Operations步骤：
-
-click“重置谷歌verify器”。
-
-使用谷歌verify器APP扫描page上显示的QR code。
-
-APP将生成一个6位动态verify码。
-
-在page输入框内填写该verify码。
-
-click“next”，进行securityverify。
-
-输入邮件verify码/原谷歌verify码进行身份verify。
-
-confirmsuccess后，重置谷歌success。
-
-![](../.gitbook/assets/image71.png)
-
-![](../.gitbook/assets/image72.png)
-
-![](../.gitbook/assets/image73.png)
-
-最近login历史
-
-Feature Description：显示该merchantaccount最佳loginregion及IPinformation，如发现在未知regionlogin，请及时modifypassword以及谷歌verify器。
-
-![](../.gitbook/assets/image74.png)
+**Feature Description**: Displays the most recent login locations and IP information for this merchant account. If a login from an unknown location is detected, please change your password and Google Authenticator immediately.

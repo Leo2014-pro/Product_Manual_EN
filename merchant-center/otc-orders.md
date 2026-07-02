@@ -1,185 +1,108 @@
 # OTC Orders
 
-当使用OLS上游进行承兑时，有该模块，merchantKYB等information全部在OSL进行进件、每笔出入金order都在OSL进行，平台只是将data透传至上游。
+When using OSL upstream for OTC (Over-The-Counter) services, this module is available. All merchant KYB and related information is onboarded through OSL, and every deposit/withdrawal order is processed through OSL. The platform only transparently transmits data to the upstream.
 
-account
+## Accounts
 
-Feature Description：This page进行承兑accountenable，以及enable承兑accountVAcollectioninformationdisplay、数币assetsdisplay。
+**Feature Description**: This page is used for opening OTC accounts, displaying OTC account VA collection information, and digital asset status.
 
-![](../.gitbook/assets/image27.png)
+**Operations**:
+1. Open OTC Account
+   1. Complete KYB by filling in the required information.
+   2. Fill in fiat account card-opening information to proceed with account opening.
+2. View
+   1. View fiat receiving bank account details.
+   2. View USDT and USDC asset status.
 
-![](../.gitbook/assets/image28.png)
+---
 
-Operations：
+## Collections
 
-enable承兑account
+**Feature Description**: Merchants can view the receiving account information for their OTC accounts.
 
-进行KYB，填写information
+**Operations**:
+1. Deposit Preparation
+   1. Before receiving funds, you must add counterparties and their receiving wallet addresses / bank account numbers.
+   2. When an account is created, a self-owned counterparty is created by default.
+2. Deposit Details
+   1. **Crypto**: Displays the receiving wallet address for that counterparty. When funds are received at this wallet address, it is recorded as a transfer from that counterparty by default.
+   2. **Fiat**: Displays receiving bank information and the paying company name. You must use an account with the same name as the counterparty to transfer funds; otherwise, the funds cannot be credited.
 
-填写fiat currencyaccount开卡information，进行开户Operations
+---
 
-view
+## Payouts
 
-viewfiat currencycollection银行account
+**Feature Description**: Merchants can perform payout operations from their OTC accounts.
 
-viewUSDT、USDCassets情况
+**Operations**:
+1. Payee Information
+   1. Before making a payment, you must add counterparties and their receiving wallet addresses / bank account numbers.
+   2. When selecting a third-party counterparty, you must first add a payout limit in the Counterparty module before making a payment. No limit is required for payments to yourself.
 
-collection
+2. Payout Details
+   1. **Crypto**:
+      - Enter the payout amount and purpose.
+      - Payout fees are deducted from the account balance.
+      - Review the receiving wallet address and counterparty to verify correctness.
+      - After submitting the order, check the order status in the Payout Order list.
 
-Feature Description：merchant进行view承兑accountcollectionaccountinformation。
+   2. **Fiat**:
+      - Enter the payout amount and purpose.
+      - Review the receiving bank information and counterparty to verify correctness.
+      - After submitting the order, check the order status in the Payout Order list.
 
-![](../.gitbook/assets/image29.png)
+---
 
-Operationsdescription
+## Counterparties
 
-存款details
+**Feature Description**: Maintain counterparty company information, deposit/withdrawal accounts, and payout limits for merchant fund inflows and outflows.
 
-collection前，必须添加transaction对手以及transaction对手collection钱包address&银行卡号。
+**Operations**:
 
-当accountcreate默认会create自有transaction对手。
+1. **Counterparties**: Serves as the counterparty entity for fund inflows and outflows, with deposits and withdrawals tracked by counterparty.
+   1. Create Counterparty: Create a company entity that transacts with the merchant.
+   2. Edit: Edit the alias.
+   3. Entity Type:
+      - Self: The entity created from the merchant's own KYB information, automatically created when the OTC account is opened. No limit is required for payouts from this entity.
+      - Third-Party: Other company entities.
 
-存款details
+2. **Counterparty - Upload Documents**
+   1. Upload invoices and contracts. Once approved, a payout limit to that company is granted.
+   2. Uploaded document limits are cumulative.
 
-数币：显示该transaction对手collection钱包address，当该钱包address收到资金，默认为该transaction对手进行transfer。
+3. **Counterparty - Limit Management**
+   1. All currency payout limits are unified in USD. When a merchant makes a payout, the limit is deducted accordingly.
 
-![](../.gitbook/assets/image30.png)
+4. **Counterparty - Crypto**
+   1. Deposit
+      - List: Displays multiple deposit addresses for this counterparty. Any amount transferred to wallet addresses in the list is recorded as a transfer from that counterparty.
+      - Add: Create a new wallet address for the merchant to receive funds.
+   2. Withdrawal
+      - List: Displays multiple withdrawal addresses for this counterparty. When the merchant pays this counterparty in crypto, the address must be one of the approved addresses in this list.
+      - Add: Create a new withdrawal wallet address.
+      - Disable/Enable: Once disabled, the address cannot be selected for payouts.
 
-fiat currency：显示collection银行information，以及打款companyname。必须使用该transaction对手同名account进行打款，否则无法上帐。
+5. **Counterparty - Fiat**
+   1. Deposit
+      - List: Displays multiple paying bank accounts for this merchant. When this counterparty pays the merchant, the transfer must come from a bank account added in this list.
+      - Add: Create a new deposit channel, which must be a bank account under the same name as the counterparty.
+   2. Withdrawal
+      - List: Displays multiple receiving bank accounts for this counterparty. When the merchant pays this counterparty in fiat, the account must be one of the approved bank accounts in this list.
+      - Add: Create a new withdrawal bank account.
+      - Disable/Enable: Once disabled, the account cannot be selected for payouts.
 
-![](../.gitbook/assets/image31.png)
+---
 
-payment
+## Collection Orders
 
-Feature Description：merchant进行承兑accountpaymentOperations。
+**Feature Description**: Management and viewing of merchant OTC account top-up orders.
 
-![](../.gitbook/assets/image32.png)
+**Operations**:
+1. Add Counterparty: When a user who has not added a counterparty transfers funds to the merchant's bank account, they must first go to Counterparties and add a counterparty with the same name for the order to proceed.
+2. Manual Credit: When receiving fiat funds, you must select a digital currency for conversion. Once confirmed, the order proceeds and is ultimately settled in the selected digital currency into the OTC account.
 
-Operationsdescription
+---
 
-payment对象information
+## Payout Orders
 
-payment前，必须添加transaction对手以及transaction对手collection钱包address&银行卡号。
-
-当选择第三方transaction对手时，必须在transaction对手模块先添加paymentquota，才能进行payment。给自己payment则无需quota限制。
-
-![](../.gitbook/assets/image33.png)
-
-paymentdetails
-
-数币：
-
-输入paymentamount，以及用途。
-
-payment收取cost在accountbalance中进行扣除。
-
-displaycollection钱包addressinformation以及collectiontransaction对手，进行核实是否正确。
-
-submitorder后，在paymentorderlistvieworderstatus。
-
-![](../.gitbook/assets/image34.png)
-
-fiat currency：
-
-输入paymentamount，以及用途。
-
-displaycollection钱包addressinformation以及collectiontransaction对手，进行核实是否正确。
-
-submitorder后，在paymentorderlistvieworderstatus。
-
-![](../.gitbook/assets/image35.png)
-
-transaction对手
-
-Feature Description：维护merchant进行出入金的对手companyinformation、出入金account、出amount度。
-
-![](../.gitbook/assets/image36.png)
-
-Operationsdescription：
-
-transaction对手：作为出入金的对手companyinformation，出入金以transaction对手作为主体
-
-createtransaction对手：create一个与merchant进行出入金的company主体。
-
-![](../.gitbook/assets/image37.png)
-
-edit：edit别名
-
-主体type：
-
-自主：merchantKYBinformationcreate的自己的主体，在create承兑account时，自行create。该主体进行出金时，无需quota限制。
-
-第三方：其他company主体。
-
-transaction对手-uploadfiles
-
-upload发票、contract，待review通过后，可获得给该company打款的quota。
-
-uploadfilesquota会进行累加。
-
-![](../.gitbook/assets/image38.png)
-
-transaction对手-quotamanagement
-
-所有currency出amount度统一USD，merchant进行出金时，会进行扣除。
-
-![](../.gitbook/assets/image39.png)
-
-transaction对手-数币
-
-入金
-
-list：该transaction对手多个入金addressdisplay。打款到list钱包address中amount，均表示该transaction对手进行打款。
-
-add：create一个新的钱包address，给merchantcollection。
-
-![](../.gitbook/assets/image40.png)
-
-出金
-
-list：该transaction对手多个出金addressdisplay。merchant给该transaction对手打款数币时，必须是该list中review通过address。
-
-add：create一个出金钱包address。
-
-禁用/activate：禁用后该address打款时，无法被选择。
-
-![](../.gitbook/assets/image41.png)
-
-transaction对手-fiat currency
-
-入金
-
-list：该merchant多个打款银行account。该transaction对手给merchant打钱，必须走该list添加银行account打款。
-
-add：create一个新的入金通道，必须是该transaction对手同名的银行account。
-
-![](../.gitbook/assets/image42.png)
-
-出金
-
-list：该transaction对手多个collection银行accountdisplay。merchant给该transaction对手打款fiat currency时，必须是该list中review通过银行account。
-
-add：create一个出金钱包address。
-
-禁用/activate：禁用后该address打款时，无法被选择。
-
-![](../.gitbook/assets/image43.png)
-
-collectionorder
-
-Feature Description：merchant承兑accountdepositordermanagement及view。
-
-Operationsdescription：
-
-添加transaction对手：当未添加transaction对手的user，给merchant银行account进行打款时，必须先entertransaction对手，添加同名transaction对手，order才能resume。
-
-![](../.gitbook/assets/image44.png)
-
-手工上账：当collectionfiat currency资金时，必须选择兑换为数字currency。confirm后，orderresume进行，最终以选择数币currency进行结算到承兑account中。
-
-![](../.gitbook/assets/image45.png)
-
-paymentorder
-
-Feature Description：merchant承兑accountwithdrawalorderview。
-
-![](../.gitbook/assets/image46.png)
+**Feature Description**: View merchant OTC account withdrawal orders.

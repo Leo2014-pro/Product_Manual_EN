@@ -1,47 +1,33 @@
 # Payout
 
-payment是merchantmanagement所有向userpayment（代付）order、跟踪资金status的核心功能模块。
+Payout is the core functional module for merchants to manage all **outbound payment** (paying users) orders and track fund status.
 
-数币paymentorder
+## Crypto Payout Orders
 
-Feature Description：This page集中display您数字currency代付orderrecords，便于查询、跟踪和management。
+**Feature Description**: This page centrally displays your digital currency payout order records for easy querying, tracking, and management.
 
-![](../.gitbook/assets/image23.png)
+**Operations**:
+- Filter: Search by order number, type, transaction status, and time.
+- View: Detailed fields of the order's withdrawal.
+  - Order Status: After the platform submits and the on-chain confirmation is successful, the order transitions to "Processing".
+  - Callback Notification: After a successful callback, it indicates that the downstream interface has been notified.
+- Auto-Approval Settings: You can configure which currencies require manual review in the merchant backend. If not configured, all are auto-approved.
+  - List: Displays auto-approval data for configured currencies.
+  - Auto-Approval Threshold: Withdrawal orders above this amount require manual merchant review.
+  - Currency: The currency requiring review.
+  - Chain Type: The public chain to which the currency belongs.
+  - Status: Enabled, Disabled.
 
-Operations：
+- Batch Payout: Download the template to fill in batch payout receiving information.
+- Review / Batch Review: After approval, the payout order proceeds to on-chain payment. Rejected orders will fail.
+- Switch Status: This operation only exists in the sandbox environment and is used for debugging during API integration.
 
-filter：order号、type、transactionstatus、timesearch。
+---
 
-view：orderwithdrawal详细字段。
+## Fiat Payout Orders
 
-orderstatus：平台submit后，在链上confirmsuccess后，order变为complete中。
+**Feature Description**: This page centrally displays your fiat currency payout order records for easy querying, tracking, and management.
 
-回调notifications：回调success后，表示已notifications下游interface。
-
-免审settings：可settingscurrency需要在merchant后台进行review，如不settings则均是免审。
-
-list：显示settingscurrency免审data。
-
-免审quantity：高于该数字的withdrawalorder均需要merchant进行手工review。
-
-currency：需要reviewcurrency
-
-链type：currency归属公链
-
-status：开启、close
-
-![](../.gitbook/assets/image24.png)
-
-![](../.gitbook/assets/image25.png)
-
-批量payment：downloadtemplates进行填写批量paymentcollectioninformation
-
-![](../.gitbook/assets/image26.png)
-
-review/批量review：review通过后，代付order进行上链payment。review不通过orderfailed。
-
-切换status：该Operations仅沙河environment存在，用于API对接时，调试使用。
-
-fiat currencypaymentorder
-
-尽情期待！
+**Operations**:
+- Filter: Search by order number, type, transaction status, and time.
+- View: Detailed fields of the order's payment.
