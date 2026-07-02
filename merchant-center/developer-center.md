@@ -13,5 +13,3 @@
 - **Webhooks Callbacks**: Configure technical parameters and select corresponding events based on business needs.
 
 ---
-
-Document Version v1.1 | Last Updated 2026-06-15 | Maintained by: Product Team
